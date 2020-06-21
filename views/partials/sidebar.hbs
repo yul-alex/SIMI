@@ -1,29 +1,28 @@
 <!--sidebar start-->
-<aside>
+
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
-            <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a class="active" href="index.html">
+            <ul class="sidebar-menu" id="nav-accordion" href="/">
+                <li {{#ifEquals title 'Dashboard'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}>
+                    <a class="active" href="/admin">
                         <i class="fa fa-dashboard"></i>
                         <span>Inicio</span>
                     </a>
                 </li>
                 
-                <li class="sub-menu">
+                <li>
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
                         <span>Estrategias</span>
                     </a>
                     <ul class="sub">
-						<li><a href="typography.html">Listar </a></li>
-						<li><a href="glyphicon.html">Agregar</a></li>
-                        <li><a href="grids.html">Editar</a></li>
+						<li  class="sub-menu" {{#ifEquals title 'Agregar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="agregarE">Agregar</a></li>
+                        <li class="sub-menu" {{#ifEquals title 'Editar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="editarE">Editar</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="fontawesome.html">
+                <li {{#ifEquals title 'Todos'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}>
+                    <a href="todos" >
                         <i class="fa fa-bullhorn"></i>
                         <span>Todos</span>
                     </a>
@@ -34,8 +33,8 @@
                         <span>Usuarios </span>
                     </a>
                     <ul class="sub">
-                        <li><a href="basic_table.html">Estudiantes</a></li>
-                        <li><a href="responsive_table.html">Profesores</a></li>
+                        <li   {{#ifEquals title 'Estudiantes'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="estudiantes">Estudiantes</a></li>
+                        <li   {{#ifEquals title 'Profesores'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="profesores">Profesores</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -44,9 +43,9 @@
                         <span>Agregar Tests</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="testIM.html">Test IM</a></li>
-						<li><a href="testDI.html">Test Didáctico</a></li>
-						<li><a href="testI.html">Test Inglés</a></li>
+                        <li  {{#ifEquals title 'Test IM'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testIM">Test IM</a></li>
+						<li   {{#ifEquals title 'Test Didáctico'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testDI">Test Didáctico</a></li>
+						<li  {{#ifEquals title 'Test Inglés'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testI">Test Inglés</a></li>
 				
                     </ul>
                 </li>
@@ -56,5 +55,3 @@
             </ul>            </div>
         <!-- sidebar menu end-->
     </div>
-</aside>
-<!--sidebar end-->

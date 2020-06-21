@@ -40,18 +40,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <!-- Page Wrapper -->
       <div id="wrapper">
 
+        <header class="header fixed-top clearfix">
+          {{> header}}
+        </header>
+        <aside>
+          {{> sidebar}}
+        </aside>
+        <section id="main-content">
+          <section class="wrapper">
+            {{{body}}}
+          </section>
 
-        {{> sidebar}}
+          {{> footer}}
+        </section>
 
-        <!--header end-->
-        <!--sidebar start-->
-        {{> header}}
-        <!--sidebar end-->
-        <!--main content start-->
-        {{{body}}}
-        <!--main content end-->
 
-        {{> footer}}
   </section>
   <script src="/public/js/bootstrap.js"></script>
   <script src="/public/js/jquery.dcjqaccordion.2.7.js"></script>
@@ -60,6 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <script src="/public/js/jquery.nicescroll.js"></script>
   <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
   <script src="/public/js/jquery.scrollTo.js"></script>
+  
   <!-- morris JavaScript -->
   <script>
     $(document).ready(function () {
