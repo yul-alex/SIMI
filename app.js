@@ -2,6 +2,9 @@ let express = require('express')
 let app = express()
 let exphbs = require('express-handlebars')
 let path = require('path')
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var helpers = require('handlebars-helpers')();
 
 
 var indexRouter = require('./routes/index');
