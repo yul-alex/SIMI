@@ -15,8 +15,10 @@ var bodyParser = require('body-parser');
 var estudiantes = require('./routes/estudiantes');
 var profesores = require('./routes/profesores');
 var todos = require('./routes/todos');
-var editarE = require('./routes/editarE');
+var listarE = require('./routes/listarE');
 var agregarE = require('./routes/agregarE');
+var agregarT = require('./routes/agregarT');
+var listarT = require('./routes/listarT');
 
 
 
@@ -58,8 +60,10 @@ app.use('/testDI', testDI);
 app.use('/estudiantes', estudiantes);
 app.use('/profesores', profesores);
 app.use('/todos', todos);
-app.use('/editarE', editarE);
+app.use('/listarE', listarE);
 app.use('/agregarE', agregarE);
+app.use('/agregarT', agregarT);
+app.use('/listarT', listarT);
 
 
 

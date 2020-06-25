@@ -5,7 +5,7 @@
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion" href="/">
                 <li {{#ifEquals title 'Dashboard'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}>
-                    <a class="active" href="/admin">
+                    <a class="active" href="/index">
                         <i class="fa fa-dashboard"></i>
                         <span>Inicio</span>
                     </a>
@@ -15,29 +15,13 @@
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
                         <span>Estrategias</span>
-                    </a>
+                    </a>s
                     <ul class="sub">
 						<li  class="sub-menu" {{#ifEquals title 'Agregar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="agregarE">Agregar</a></li>
-                        <li class="sub-menu" {{#ifEquals title 'Editar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="editarE">Editar</a></li>
+                        <li class="sub-menu" {{#ifEquals title 'Listar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="listarE">Listar</a></li>
                     </ul>
                 </li>
-                <li {{#ifEquals title 'Todos'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}>
-                    <a href="todos" >
-                        <i class="fa fa-bullhorn"></i>
-                        <span>Todos</span>
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-th"></i>
-                        <span>Usuarios </span>
-                    </a>
-                    <ul class="sub">
-                        <li   {{#ifEquals title 'Estudiantes'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="estudiantes">Estudiantes</a></li>
-                        <li   {{#ifEquals title 'Profesores'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="profesores">Profesores</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
+                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-tasks"></i>
                         <span>Agregar Tests</span>
@@ -45,11 +29,33 @@
                     <ul class="sub">
                         <li  {{#ifEquals title 'Test IM'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testIM">Test IM</a></li>
 						<li   {{#ifEquals title 'Test Didáctico'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testDI">Test Didáctico</a></li>
-						<li  {{#ifEquals title 'Test Inglés'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testI">Test Inglés</a></li>
+						<li  {{#ifEquals title 'Test Inglés'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testIN">Test Inglés</a></li>
 				
                     </ul>
                 </li>
 
+            
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-th"></i>
+                        <span>Tematicas</span>
+                    </a>
+                    <ul class="sub">
+                        <li   {{#ifEquals title 'Agregar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="agregarT">Agregar</a></li>
+                        <li   {{#ifEquals title 'Listar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="listarT">Listar</a></li>
+                    </ul>
+                </li>
+                    <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-users"></i>
+                        <span>Usuarios </span>
+                    </a>
+                    <ul class="sub">
+                        <li   {{#ifEquals title 'Estudiantes'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="estudiantes">Estudiantes</a></li>
+                        <li   {{#ifEquals title 'Profesores'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="profesores">Profesores</a></li>
+                    </ul>
+                </li>
+               
         
          
             </ul>            </div>
