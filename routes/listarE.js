@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const util = require('util');
+const db = require('../utils/database').pool;
 
+// Promesas nativas
+const query = util.promisify(db.query).bind(db);
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('listarE', { title: 'Express', layout: 'admin' });

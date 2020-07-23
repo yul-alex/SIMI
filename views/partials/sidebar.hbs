@@ -1,63 +1,104 @@
 <!--sidebar start-->
 
-    <div id="sidebar" class="nav-collapse">
-        <!-- sidebar menu start-->
-        <div class="leftside-navigation">
-            <ul class="sidebar-menu" id="nav-accordion" href="/">
-                <li {{#ifEquals title 'Dashboard'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}>
-                    <a class="active" href="/index">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Inicio</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="javascript:;">
-                        <i class="fa fa-book"></i>
-                        <span>Estrategias</span>
-                    </a>
-                    <ul class="sub">
-						<li  class="sub-menu" {{#ifEquals title 'Agregar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="agregarE">Agregar</a></li>
-                        <li class="sub-menu" {{#ifEquals title 'Listar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="listarE">Listar</a></li>
-                    </ul>
-                </li>
-                 <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-tasks"></i>
-                        <span>Agregar Tests</span>
-                    </a>
-                    <ul class="sub">
-                        <li  {{#ifEquals title 'Test IM'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testIM">Test IM</a></li>
-						<li   {{#ifEquals title 'Test Didáctico'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testDI">Test Didáctico</a></li>
-						<li  {{#ifEquals title 'Test Inglés'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="testIN">Test Inglés</a></li>
-				
-                    </ul>
-                </li>
+<div id="sidebar" class="nav-collapse">
+    <!-- sidebar menu start-->
+    <div class="leftside-navigation">
+        <ul class="sidebar-menu" id="nav-accordion" href="/">
+            <li {{#ifEquals title 'Dashboard'}} class="nav-item active" {{else}} class="nav-item" {{/ifEquals}}>
+                <a class="active" href="/index">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
 
-            
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-th"></i>
-                        <span>Tematicas</span>
-                    </a>
-                    <ul class="sub">
-                        <li   {{#ifEquals title 'Agregar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="agregarT">Agregar</a></li>
-                        <li   {{#ifEquals title 'Listar'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="listarT">Listar</a></li>
-                    </ul>
-                </li>
-                    <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-users"></i>
-                        <span>Usuarios </span>
-                    </a>
-                    <ul class="sub">
-                        <li   {{#ifEquals title 'Estudiantes'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="estudiantes">Estudiantes</a></li>
-                        <li   {{#ifEquals title 'Profesores'}} class="nav-item active" {{else}} class="nav-item"{{/ifEquals}}><a href="profesores">Profesores</a></li>
-                    </ul>
-                </li>
-               
-        
-         
-            </ul>            </div>
-        <!-- sidebar menu end-->
+            <li>
+                <a href="javascript:;">
+                    <i class="fa fa-book"></i>
+                    <span>Estrategias</span>
+                </a>
+                <ul class="sub">
+                    <li class="sub-menu" {{#ifEquals title 'Agregar'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="agregarE">Agregar</a></li>
+                    <li class="sub-menu" {{#ifEquals title 'Listar'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="listarE">Listar</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-tasks"></i>
+                    <span> Tests</span>
+                </a>
+                <ul class="sub">
+                    <li {{#ifEquals title 'Test IM'}} class="nav-item active" {{else}} class="nav-item" {{/ifEquals}}><a
+                            href="testIM">Test IM</a></li>
+                    <li {{#ifEquals title 'Test Didáctico'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="testDI">Test Didáctico</a></li>
+                    <li {{#ifEquals title 'Test Inglés'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="testIN">Test Inglés</a></li>
+
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-question"></i>
+                    <span>Preguntas</span>
+                </a>
+                <ul class="sub">
+                    <li {{#ifEquals title 'IM'}} class="nav-item active" {{else}} class="nav-item" {{/ifEquals}}><a
+                            href="preguntaIM">IM</a></li>
+                    <li {{#ifEquals title 'Didáctico'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="preguntaDI">Didáctico</a></li>
+                    <li {{#ifEquals title 'Inglés'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="preguntaIN">Inglés</a></li>
+
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-book"></i>
+                    <span>Respuestas</span>
+                </a>
+                <ul class="sub">
+                    
+                    <li {{#ifEquals title 'Didáctico'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="respuestaDI">Didáctico</a></li>
+                    <li {{#ifEquals title 'Inglés'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="respuestaIN">Inglés</a></li>
+
+                </ul>
+            </li>
+
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-th"></i>
+                    <span>Tematicas</span>
+                </a>
+                <ul class="sub">
+                    <li {{#ifEquals title 'Agregar'}} class="nav-item active" {{else}} class="nav-item" {{/ifEquals}}><a
+                            href="agregarT">Agregar</a></li>
+                    <li {{#ifEquals title 'Listar'}} class="nav-item active" {{else}} class="nav-item" {{/ifEquals}}><a
+                            href="listarT">Listar</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-users"></i>
+                    <span>Usuarios </span>
+                </a>
+                <ul class="sub">
+                    <li {{#ifEquals title 'Estudiantes'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="estudiantes">Estudiantes</a></li>
+                    <li {{#ifEquals title 'Profesores'}} class="nav-item active" {{else}} class="nav-item"
+                        {{/ifEquals}}><a href="profesores">Profesores</a></li>
+                </ul>
+            </li>
+
+
+
+        </ul>
     </div>
+    <!-- sidebar menu end-->
+</div>

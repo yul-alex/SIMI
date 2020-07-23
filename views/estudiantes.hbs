@@ -27,36 +27,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-expanded="true">
-                        <td>5</td>
-                        <td>Dennise</td>
 
-                        <td>High School History Teacher</td>
 
-                        <td>cuarto</td>
-                        <td>Mario</td>
-                        <td>30</td>
+                    {{#each estudiante}}
+
+                    <tr>
+                        <td>{{edad_persona}}</td>
+                        <td>{{nombre_persona}}</td>
+                        <td>{{nombre_institucion}}</td>
+                        <td>{{nombre_persona}}</td>
+                        <td>{{nombre_persona}}</td>
+
                     </tr>
-                   <tr data-expanded="true">
-                        <td>5</td>
-                        <td>Dennise</td>
+                    {{/each}}
 
-                        <td>High School History Teacher</td>
 
-                        <td>cuarto</td>
-                        <td>Mario</td>
-                        <td>30</td>
-                    </tr>
-                       <tr data-expanded="true">
-                        <td>5</td>
-                        <td>Dennise</td>
-
-                        <td>High School History Teacher</td>
-
-                        <td>cuarto</td>
-                        <td>Mario</td>
-                        <td>30</td>
-                    </tr>
+                   
                 </tbody>
             </table>
         </div>

@@ -19,6 +19,12 @@ var listarE = require('./routes/listarE');
 var agregarE = require('./routes/agregarE');
 var agregarT = require('./routes/agregarT');
 var listarT = require('./routes/listarT');
+var preguntaIM = require('./routes/preguntaIM');
+var preguntaDI = require('./routes/preguntaDI');
+var preguntaIN = require('./routes/preguntaIN');
+
+var respuestaDI = require('./routes/respuestaDI');
+var respuestaIN = require('./routes/respuestaIN');
 
 
 
@@ -64,6 +70,12 @@ app.use('/listarE', listarE);
 app.use('/agregarE', agregarE);
 app.use('/agregarT', agregarT);
 app.use('/listarT', listarT);
+app.use('/preguntaIM', preguntaIM);
+app.use('/preguntaDI', preguntaDI);
+app.use('/preguntaIN', preguntaIN);
+
+app.use('/respuestaDI', respuestaDI);
+app.use('/respuestaIN', respuestaIN);
 
 
 

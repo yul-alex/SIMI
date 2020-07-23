@@ -1,14 +1,10 @@
-const mysql = require("mysql");
-require('dotenv').config();
+var mysql = require('mysql');
 
-const database_url = process.env.DATABASE_URL.match(/mysql:\/\/(.+):(.+)@(.+)\/(.+)\?reconnect=true/);
+var pool  = mysql.createPool({
+    Host     : 'localhost',
+    user     : 'root',
+    password : 'root',
+    database : 'simi'
+});
 
-module.exports = mysql.createPool(
-  {
-    user: database_url[1],
-    password: database_url[2],
-    host: database_url[3],
-    database: database_url[4],
-    debug: false
-  }
-);
+exports.pool = pool;

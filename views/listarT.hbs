@@ -1,14 +1,14 @@
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Tematicas 
+            Tematicas
         </div>
 
         <div class="table-responsive">
             <table class="table table-striped b-t b-light">
                 <thead>
                     <tr>
-                       
+
                         <th>Nombre </th>
                         <th>Tipo </th>
 
@@ -17,25 +17,19 @@
                 </thead>
                 <tbody>
 
+
+                    {{#each tematicas}}
+                                   
                     <tr>
-                         <td>Lógico matematica</td>
-                         <td>Inteligencia Multiple</td>
-
-
+                        <td>{{nombre}}</td>
+                        <td>{{tipo_tema}}</td>
                     </tr>
-                    <tr>
-                        <td>Familia</td>
-                        <td>Inglés</td>
+                      {{/each}}
+                 
 
-
-                    </tr>
-               
                 </tbody>
             </table>
 
         </div>
     </div>
 </div>
-
-
-
