@@ -19,7 +19,10 @@ router.post('/', async (req, res, next) => {
     res.send(error.sqlMessage);
   }
 });
-
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('agregarT', { title: 'Express', layout: 'admin' });
+});
 
 router.get('/', async (req, res, next) =>  {
   
@@ -27,7 +30,6 @@ router.get('/', async (req, res, next) =>  {
 
   res.render('agregarT', { tipo: result,  layout: 'admin', title: 'Agregar Tema' })
 
-  console.log('entro1');
 });
 
 

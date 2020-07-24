@@ -43,7 +43,7 @@
                                             <div class="form-group">
                                                 <label class="col-sm-3 control-label">Enunciado</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="pregunta">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -67,3 +67,41 @@
         </div>
     </div>
 </div>
+
+<script>
+    function guardar() {
+        var data = new FormData()
+        data.append('nombre', document.getElementById("pregunta").value);
+
+        fetch('testDI', {
+            method: 'POST',
+            body: data
+        }).then(result => {
+            return result.json();
+        }).then(data => {
+            console.log(data)
+            $('#testDI');
+            location.reload();
+        })
+            .catch(err => {
+                console.log(err);
+            });
+
+    };
+
+    function traer(id) {
+        fetch(`preguntaIM${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({ nombre: document.getElementById("test").value }),
+            headers: { 'Content-Type': 'application/json' }
+        }).then(result => {
+            $('#CategoryModal').modal('hide');
+            location.reload();
+        }).catch(err => {
+            console.log(err);
+        });
+    }
+
+
+
+</script>

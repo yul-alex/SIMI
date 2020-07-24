@@ -11,21 +11,21 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Nombre del test</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="nombre_test">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Numero de preguntas</label>
                             <div class="col-sm-6">
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" id="numero">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Tiempo del test</label>
                             <div class="col-sm-6">
-                                <select class="form-control input-lg m-bot15">
+                                <select class="form-control input-lg m-bot15" id="tiempo">
                                     <option>10 min</option>
                                     <option>15 min</option>
                                     <option>20 min</option>
@@ -48,61 +48,7 @@
                             </div>
                         </div>
 
-                        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal"
-                            class="modal fade">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button aria-hidden="true" data-dismiss="modal" class="close"
-                                            type="button">×</button>
-                                        <h4 class="modal-title">Form Tittle</h4>
-                                    </div>
-                                    <div class="modal-body">
-
-                                        <form role="form">
-
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Enunciado</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-
-
-
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Respuesta 1</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control" placeholder="placeholder">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Respuesta 2</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control" placeholder="placeholder">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Respuesta 3</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control" placeholder="placeholder">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group has-success">
-                                                <label class="col-sm-3 control-label col-lg-3"
-                                                    for="inputSuccess">Respuesta Correcta</label>
-                                                <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="inputSuccess">
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="btn btn-default">Guardar</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  
 
                     </form>
                 </div>
@@ -111,3 +57,31 @@
         </div>
     </div>
 </div>
+
+<script>
+    function guardar() {
+        var data = new FormData()
+        data.append('nombre', document.getElementById("nombre_test").value);
+        data.append('descripcion', document.getElementById("numero").value);
+        data.append('descripcion', document.getElementById("tiempo").value);
+
+
+        fetch('testDI', {
+            method: 'POST',
+            body: data
+        }).then(result => {
+            return result.json();
+        }).then(data => {
+            console.log(data)
+            $('#testDI');
+            location.reload();
+        })
+            .catch(err => {
+                console.log(err);
+            });
+
+    };
+
+
+
+</script>
