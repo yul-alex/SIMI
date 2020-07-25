@@ -12,17 +12,17 @@
                     <form class="form-horizontal bucket-form" method="get">
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Nombre del test</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6" onchange="lafuncion">
                                 <option selected>Buscar </option>
                                 {{#each test}}
-                                <option value="1" id="test">{{nombre_test}} </option>
+                                <option value="1" id="test" >{{nombre_test}} </option>
                                 {{/each}}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-6">
-                                <a href="#myModal" data-toggle="modal" class="btn btn-success">
+                                <a href="#myModal" data-toggle="modal" class="btn btn-success" onclick="lafuncion">
                                     Crear preguntas
                                 </a>
 
@@ -45,7 +45,7 @@
                                             <div class="panel-body">
                                                 <div class="position-center">
                                                     <form class="form-horizontal" role="form">
-
+                                                            {{#each valor x veces}}
                                                         <div class="form-group">
                                                             <label for="inputEmail1"
                                                                 class="col-sm-3 control-label">Pregunta</label>
