@@ -1,30 +1,12 @@
+
+
 var express = require('express');
 var router = express.Router();
-const util = require('util');
-const db = require('../utils/database').pool;
-
-// Promesas nativas
-const query = util.promisify(db.query).bind(db);
+const { GetData } = require('../services/testIN')
+const { PostData } = require('../services/testIN')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('testIN', { title: 'Express', layout: 'admin' });
-});
-
-
-/* agregar test */
-router.post('/', async (req, res, next) => {
-  let {  nombre, cant_preguntas_test, tiempo_limite_test} = req.body;
-  try {
-    const result = await query("INSERT INTO test (nombre_test, cant_preguntas_test, tiempo_limite_test) VALUES (?,?)", [nombre], [cant_preguntas_test] , [tiempo_limite_test]);           
-    res.json(result);
-  } catch (error) {
-    console.log('Error =>', error);
-    res.send(error.sqlMessage);
-  }
-});
-
-
-
+router.get('/testIN', GetData);
+router.get('/testIN', PostData);
 
 module.exports = router;

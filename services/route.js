@@ -12,12 +12,13 @@ router.use(
     require('./preguntaIM'),
     require('./preguntaIN'),
     require('./profesores'),
+    require('./respuestaDI'),
     require('./respuestaIN'),
     require('./respuestaDI'),
     require('./testDI'),
     require('./testIM'),
     require('./testIN'),
-   
+    
   ]
 );
 
