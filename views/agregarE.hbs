@@ -20,19 +20,22 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Inteligenca </label>
                             <div class="col-sm-6">
-                                <select class="form-control input-lg m-bot15">
-                                    <option>Logico matematica</option>
-                                    <option>Verbal</option>
+                                <select class="form-control input-lg m-bot15" id="mySelect" onchange="myFunction()">
+                                    {{#each inteligencia}}
+                                    <option value="1" id="test">{{nombre}} </option>
+                                    {{/each}}
                                 </select>
+
 
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Tema </label>
                             <div class="col-sm-6">
-                                <select class="form-control input-lg m-bot15">
-                                    <option>Famlia</option>
-                                    <option>Vocabulario</option>
+                                <select class="form-control input-lg m-bot15" id="mySelect" onchange="myFunction()">
+                                    {{#each tema}}
+                                    <option value="1" id="test">{{nombre}} </option>
+                                    {{/each}}
                                 </select>
 
                             </div>
@@ -40,10 +43,9 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Tipo de Actividad</label>
                             <div class="col-sm-6">
-                                <select class="form-control input-lg m-bot15">
-                                    <option>Famlia</option>
-                                    <option>Vocabulario</option>
-                                </select>
+
+                                <input type="text" class="form-control" id="pregunta">
+
 
                             </div>
                         </div>

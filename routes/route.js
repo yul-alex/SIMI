@@ -5,7 +5,7 @@ router.use(
     require('./agregarE'),
     require('./agregarT'),
     require('./estudiantes'),
-    require('./index'),
+    require('./indexP'),
     require('./listarE'),
     require('./listarT'),
     require('./preguntaDI'),

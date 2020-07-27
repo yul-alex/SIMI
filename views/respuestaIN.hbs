@@ -13,10 +13,11 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Nombre del test</label>
                             <div class="col-sm-6">
-                                <option selected>Buscar </option>
-                                {{#each test}}
-                                <option value="1" id="test">{{nombre_test}} </option>
-                                {{/each}}
+                                <select id="mySelect" onchange="myFunction()">
+                                    {{#each test}}
+                                    <option value="1" id="test">{{nombre_test}} </option>
+                                    {{/each}}
+                                </select>
                             </div>
                         </div>
 

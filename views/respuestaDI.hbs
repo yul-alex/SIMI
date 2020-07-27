@@ -13,14 +13,15 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Nombre del test</label>
                             <div class="col-sm-6">
-                                <option selected> Buscar </option>
-                                {{#each test}}
-                                <option value="1" id="test">{{nombre_test}} </option>
-                                {{/each}}
+                                <select id="mySelect" onchange="myFunction()">
+                                    {{#each test}}
+                                    <option value="1" id="test">{{nombre_test}} </option>
+                                    {{/each}}
+                                </select>
                             </div>
                         </div>
 
-                     
+
 
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-6">
@@ -49,7 +50,7 @@
                                             <div class="panel-body">
                                                 <div class="position-center">
                                                     <form role="form">
-                                                    
+
 
                                                         <div class="form-group">
                                                             <label for="exampleInputFile">Respuesta 1</label>
@@ -97,27 +98,27 @@
 </div>
 
 <script>
-  function guardar() {
-    var data = new FormData()
-   
-    data.append('imagen1', document.getElementById('img1[]').files[0]);
-    data.append('imagen2', document.getElementById('img2[]').files[1]);
-    data.append('imagen3', document.getElementById('img3[]').files[2]);
+    function guardar() {
+        var data = new FormData()
 
-    fetch('respuestasDI', {
-      method: 'POST',
-      body: data
-    }).then(result => {
-      return result.json();
-    }).then(data => {
-      console.log(data)
-      $('#myModal').modal('hide');
-      location.reload();
-    })
-    .catch(err => {
-      console.log(err);
-    });
+        data.append('imagen1', document.getElementById('img1[]').files[0]);
+        data.append('imagen2', document.getElementById('img2[]').files[1]);
+        data.append('imagen3', document.getElementById('img3[]').files[2]);
 
-  };
+        fetch('respuestasDI', {
+            method: 'POST',
+            body: data
+        }).then(result => {
+            return result.json();
+        }).then(data => {
+            console.log(data)
+            $('#myModal').modal('hide');
+            location.reload();
+        })
+            .catch(err => {
+                console.log(err);
+            });
+
+    };
 
 </script>

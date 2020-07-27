@@ -5,6 +5,6 @@ const { postData } = require('../services/agregarT')
 
 /* GET home page. */
 router.get('/agregarT', GetData);
-router.get('/agregarT', postData);
+router.post('/agregarT', postData);
 
 module.exports = router;

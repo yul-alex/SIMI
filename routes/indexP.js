@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const { GetData } = require('../services/index')
+const { GetData } = require('../services/indexP')
 
 /* GET home page. */
-router.get('/index', GetData);
+router.get('/indexP', GetData);
 
 module.exports = router;
