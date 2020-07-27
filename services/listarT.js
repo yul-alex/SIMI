@@ -10,10 +10,9 @@ const query = util.promisify(db.query).bind(db);
 /* listar tematicas */
 const GetData = async  (req, res, next) => {
   
-  const result = await query('SELECT  tema.nombre, tipo_tema.tipo_tema FROM tema INNER JOIN tipo_tema ON tema.fk_tipo_tema = tipo_tema.id_tipotema ');
-   query('select * from tema', (err, result) => {
-     console.log(result);
-   });
+  const result = await query('SELECT  tema.nombre AS nombre, tipo_tema.tipo_tema AS tipo FROM tema INNER JOIN tipo_tema ON tema.fk_tipo_tema = tipo_tema.id_tipotema ');
+   
+  
   res.render('listarT', { tematicas: result, layout: 'admin', title: 'Estudiantes' })
 
 
