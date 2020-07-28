@@ -11,6 +11,8 @@
 
                         <th>Nombre </th>
                         <th>Tipo </th>
+                        <th>Accion </th>
+
 
 
                     </tr>
@@ -23,13 +25,43 @@
                     <tr>
                         <td>{{nombre}}</td>
                         <td>{{tipo}}</td>
+
+                        {{/each}}
+
+
+                        <td>
+                            <div id="actionsContainer">
+                                <div id="actiosItems">
+                                   
+                                    <span id="span2"><a class="nav-link" href="#" onclick="eliminar({{id}})">
+                                            <i class="fa fa-trash"></i>
+                                        </a></span>
+                                </div>
+                            </div>
+                        </td>
+
+
                     </tr>
-                    {{/each}}
-
-
                 </tbody>
             </table>
 
         </div>
     </div>
 </div>
+
+<script>
+
+ 
+
+    function eliminar(id) {
+        fetch(`/listarT/${id}`, {
+            method: 'DELETE'
+        }).then(result => {
+            console.log(result);
+            location.reload();
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
+</script>

@@ -41,6 +41,8 @@
     data.append('nombre', document.getElementById("nombre").value);
     data.append('fk_tipo_tema', document.getElementById("tipoT").value);
 
+    console.log("entro 1);
+
     fetch('agregarT', {
       method: 'POST',
       body: data
@@ -48,13 +50,14 @@
       return result.json();
     }).then(data => {
       console.log(data)
-      $('agregarT');
+      $('#agregarT');
       location.reload();
+      console.log("entro 2");
     })
     .catch(err => {
       console.log(err);
     });
 
-  };
+  }
 
 </script> 

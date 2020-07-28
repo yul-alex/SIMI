@@ -9,15 +9,17 @@ const query = util.promisify(db.query).bind(db);
 const GetData = async (req, res, next) => { 
   //const result = await query();
   const result = await query('SELECT * FROM tipo_tema');
+  const tema = await query('SELECT * FROM tema');
 
-  res.render('agregarT', { tipo: result,  layout: 'admin', title: 'Agregar Tema' })
+  res.render('agregarT', { tipo: result, tema:tema, layout: 'admin', title: 'Agregar Tema' })
 
 
 
 }
 /* agregar tematicas */
 const postData = async (req, res, next) => {
-  let {  nombre, fk_tipo_tema} = req.body;
+  let {nombre, fk_tipo_tema} = req.body;
+  console.log("entro al post");
   try {
     const result = await query("INSERT INTO test (nombre, fk_tipo_tema) VALUES (?,?)", [nombre], [fk_tipo_tema] );           
     res.json(result);

@@ -19,6 +19,19 @@ const GetData = async  (req, res, next) => {
 }
 
 
+
+const eliminar= async (req, res, next) => {
+  try {
+    const result = await query(`DELETE FROM marca WHERE id_marca = ${req.params.id}`);      
+    res.json(result);     
+  } catch (error) {
+ 
+    res.send(error.sqlMessage);
+  }
+};
+
+
+
 module.exports = {
   GetData
 }
