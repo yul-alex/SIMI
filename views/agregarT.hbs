@@ -1,49 +1,65 @@
 <div class="table-agile-info">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Agregar Temáticas
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Agregar Temáticas
+    </div>
+
+
+    <div class="panel-body">
+      <form class="form-horizontal bucket-form">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Nombre Temática</label>
+          <div class="col-sm-6">
+            <input class="form-control" id="nombre" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Tipo </label>
+          <div class="col-sm-6">
+
+            <select class="form-control input-lg m-bot15">
+              {{#each tipo}}
+              <option value="1" id="tipoT">{{tipo_tema}} </option>
+              {{/each}}
+            </select>
+
+          </div>
         </div>
 
-        <div class="panel-body">
-            <form class="form-horizontal bucket-form" method="get">
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Nombre Temática</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="nombre">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Tipo </label>
-                    <div class="col-sm-6">
+      </form>
+      <div class="form-group">
+        <div class="col-lg-offset-5 col-lg-10">
 
-                        <select class="form-control input-lg m-bot15">
-                            {{#each tipo}}
-                            <option value="1" id="tipoT">{{tipo_tema}} </option>
-                            {{/each}}
-                        </select>
-
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-default" onclick="guardar()">Agregar</button>
-
-            </form>
+          <a class="btn btn-primary" href="#" id="actionForm" onclick="guardar()">Guardar</a>
 
         </div>
+      </div>
 
 
     </div>
 
+  </div>
 </div>
 
-<script> 
+
+
+<script>
+
+
   function guardar() {
+    console.log("ejecutando función")
+  }
+
+
+  function guardar2() {
     var data = new FormData()
     data.append('nombre', document.getElementById("nombre").value);
     data.append('fk_tipo_tema', document.getElementById("tipoT").value);
-
-    console.log("entro 1);
+    console.log("entro")
+    console.log(document.getElementById("tipoT").value)
 
     fetch('agregarT', {
+
       method: 'POST',
       body: data
     }).then(result => {
@@ -52,12 +68,14 @@
       console.log(data)
       $('#agregarT');
       location.reload();
-      console.log("entro 2");
+
     })
-    .catch(err => {
-      console.log(err);
-    });
+      .catch(err => {
+        console.log(err);
+      });
 
   }
 
-</script> 
+
+
+</script>
