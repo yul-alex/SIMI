@@ -18,6 +18,9 @@ router.use(
     require('./testDI'),
     require('./testIM'),
     require('./testIN'),
+    require('./agregarCurso'),
+    require('./listarECurso'),
+    require('./perfilDocente'),
     
   ]
 );

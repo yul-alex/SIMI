@@ -30,7 +30,7 @@
       <div class="form-group">
         <div class="col-lg-offset-5 col-lg-10">
 
-          <a class="btn btn-primary" href="#" id="actionForm" onclick="guardar()">Guardar</a>
+          <button class="btn btn-primary" href="#" id="actionForm" onclick="guardar2()">Guardar</button>
 
         </div>
       </div>
@@ -50,17 +50,24 @@
     console.log("ejecutando función")
   }
 
+//estaba llamando la otra 
+//cual cambio es que me perdi donde estaba llamando otra?
+//es que arriba llamaba a la guardar y usted ocupa q llame a la guardar2
+//era para probar si entraba a alguna de las dos pero no entra a ninguna
+//brueba asi
 
   function guardar2() {
+    console.log('entre a la fucnoon');
     var data = new FormData()
     data.append('nombre', document.getElementById("nombre").value);
     data.append('fk_tipo_tema', document.getElementById("tipoT").value);
     console.log("entro")
     console.log(document.getElementById("tipoT").value)
 
+//en esta funcion no esta entrando
     fetch('agregarT', {
 
-      method: 'POST',
+      method: 'POST', 
       body: data
     }).then(result => {
       return result.json();
