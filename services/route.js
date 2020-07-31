@@ -19,8 +19,9 @@ router.use(
     require('./testIM'),
     require('./testIN'),
     require('./agregarCurso'),
-    require('./listarECurso'),
+    require('./listarECurso'), 
     require('./perfilDocente'),
+    require('./agregarDocente'),
     
   ]
 );

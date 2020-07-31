@@ -6,21 +6,7 @@ const db = require('../utils/database').pool;
 // Promesas nativas
 const query = util.promisify(db.query).bind(db);
 
-/* agregar Docente*/
-const postData = async (req, res, next) => {
-    let {nombre, fk_tipo_tema} = req.body;
-    console.log("entro al post");
-    try {
-      const result = await query("INSERT INTO persona (nombre_persona,edad_persona, usuario, fk_ie,contraseña) VALUES (?,?)", [nombre], [fk_tipo_tema] );           
-      res.json(result);
-    } catch (error) {
-      console.log('Error =>', error);
-      res.send(error.sqlMessage);
-    }
-  }
 
-
-/* traer un docente */
 const TraerData = async (req, res, next) => {
     console.log(req.params.id)
     try {
@@ -51,4 +37,5 @@ const TraerData = async (req, res, next) => {
     module.exports = {
       PostData,
       TraerData
+  
     }

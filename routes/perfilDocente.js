@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
 const { GetData } = require('../services/perfilDocente')
-const { PostData } = require('../services/perfilDocente')
+const { TraertData } = require('../services/perfilDocente')
+
 
 /* GET home page. */
-router.get('/preguntaDI', GetData);
-router.post('/preguntaDI', PostData);
+router.get('/perfilDocente', GetData);
+router.gett('/perfilDocente', TraertData);
+
 
 module.exports = router;
