@@ -9,7 +9,7 @@ const GetData = async (req, res, next) => {
     const result = await query('SELECT * FROM curso ');
 
   };
-  
+  //ssss
   /* traer un curso */
   const TraerData = async (req, res, next) => {
     console.log(req.params.id)
