@@ -18,12 +18,11 @@ router.use(
     require('./testDI'),
     require('./testIM'),
     require('./testIN'),
-   require('./agregarCurso'),
-    require('./listarECurso'), 
+    require('./listarCurso'),
+   // require('./listarECurso'), 
     require('./perfilDocente'),
     require('./agregarDocente'),
     require('./loginDocente'),
-
     
   ]
 );
