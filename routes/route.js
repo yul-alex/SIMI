@@ -17,15 +17,7 @@ router.use(
     require('./testDI'),
     require('./testIM'),
     require('./testIN'),
-<<<<<<< Updated upstream
    
-=======
-    require('./agregarCurso'),
-    require('./listarECurso'),
-    require('./perfilDocente'),
-    require('./agregarDocente'),
-    require('./loginDocente'),
->>>>>>> Stashed changes
   ]
 );
 

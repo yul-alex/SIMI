@@ -20,23 +20,6 @@ const GetData = async  (req, res, next) => {
 }
 
 
-<<<<<<< Updated upstream
-=======
-
-const eliminar = async (req, res, next) => {
-  try {
-    const result = await query(`DELETE FROM tema WHERE id_tema = ${req.params.id}`);      
-    res.json(result);     
-  } catch (error) {
- 
-    res.send(error.sqlMessage);
-  }
-};
-
-
-
->>>>>>> Stashed changes
 module.exports = {
-  GetData,
-  eliminar
+  GetData
 }
