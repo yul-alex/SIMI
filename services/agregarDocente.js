@@ -8,7 +8,7 @@ const query = util.promisify(db.query).bind(db);
 
 const postData = async (req, res, next) => {
     let {nombre, edad, usuario, fk_ie, constraseña} = req.body;
-    console.log("entro al ");
+    console.log("entro al  gggggggg");
     try {
   
          const persona= await query(`
